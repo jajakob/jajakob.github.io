@@ -27,6 +27,8 @@
     --logo-size: 60px;
 
     --row-gap: var(--row-gap);
+    --li-height: none;
+    --fs-main: 16px;
 }
 
 *, *::before, *::after {
@@ -152,16 +154,46 @@ svg path {
     fill: black;
 }
 
+main {
+    font-size: var(--fs-main);
+}
+
 ul {
     list-style: none;
     margin: 0;
     padding: 0;
     height: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 }
 
 li {
-    width: 100%;
+    /* transform: translateY(0);
+    transition: transform 1000ms ease-in-out; */
+    /* height: 26px; */
+    height: var(--li-height);
+    transition: height 1000ms ease-in-out;
+}
+
+li p {
+    overflow: hidden;
+    margin: 0;
+    height: calc(100% - var(--li-height));
+    /* transition: height 5000ms linear; */
+}
+
+.active {
+    height: 100%;
+    /* transform: translateY(-50vh); */
+}
+
+.active:last-child a {
     border-bottom: 1px solid black;
+}
+
+.active p {
+    display: grid;
 }
 
 li a {
@@ -170,6 +202,11 @@ li a {
     justify-content: space-between;
     color: black;
     text-decoration: none;
+    border-bottom: 1px solid black;
+}
+
+li:last-child a {
+    border-bottom: 0 solid black;
 }
 
 main {
