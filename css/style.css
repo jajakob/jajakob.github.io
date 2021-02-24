@@ -146,13 +146,6 @@ header {
     /* border-left: 2px solid black; */
     width: var(--logo-size);
     height: var(--logo-size);
-    /* padding: 0.5em;
-    margin-left: -20px;
-    transition: transform 200ms ease-in-out; */
-}
-
-#logo:hover {
-    transform: scale(1.1);
 }
 
 svg path {
@@ -161,6 +154,27 @@ svg path {
 
 ul {
     list-style: none;
+    margin: 0;
+    padding: 0;
+    height: inherit;
+}
+
+li {
+    width: 100%;
+    border-bottom: 1px solid black;
+}
+
+li a {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    color: black;
+    text-decoration: none;
+}
+
+main {
+    grid-row: 2 / span 1;
+    height: 100%;
 }
 
 footer {
