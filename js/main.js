@@ -2,9 +2,12 @@ const doc_style = getComputedStyle(document.documentElement);
 
 // Get all the list elements
 let li_collection = document.getElementsByTagName("LI");
-const home = li_collection[0].getElementsByTagName("A")[0];
+const home = li_collection[1].getElementsByTagName("A")[0];
 
-document.documentElement.style.setProperty('--li-height', getComputedStyle(home).height);
+console.log(li_collection[0]);
+console.log(getComputedStyle(home).height);
+// document.documentElement.style.setProperty('--li-height', getComputedStyle(home).height);
+
 
 // Loop through the li items and add the active class to the current/clicked button
 for (let i = 0; i < li_collection.length; i++) {
