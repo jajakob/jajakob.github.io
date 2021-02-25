@@ -190,6 +190,7 @@ ul {
 }
 
 li {
+    padding-top: 10px;
     height: var(--li-height);
     transition: height 1000ms ease-in-out;
 }
@@ -205,10 +206,7 @@ li section {
     grid-template-columns: repeat(5, 1fr);
     column-gap: 10px;
     justify-items: start;
-    align-items: center;
-    /* display: none; */
-    /* transition: height 5000ms linear; */
-    
+    /* align-items: center; */
 }
 
 .active,
@@ -226,6 +224,31 @@ li section {
 
 .publication {
     grid-column: 3 / span 3;
+}
+
+.publication-index {
+    grid-column: 2 / span 1;
+    align-self: start;
+    justify-self: end;
+    margin-top: 14px;
+    
+    font-size: 12px;
+    font-weight: 400;
+
+}
+
+.publication h2 {
+    font-weight: 500;
+    font-size: 9px;
+    font-style: italic;
+}
+
+.publication h3 {
+    /* color: gray; */
+    font-weight: 400;
+    font-size: 9px;
+    margin: 0 0 30px 0;
+
 }
 
 p {
