@@ -272,11 +272,13 @@ li a {
     margin-bottom: var(--a-margin-bot);
     border-bottom: 1px solid black;
     font-size: var(--fs-li);
+    transition: border-bottom 1000ms ease-in-out;
 }
 
-li:last-child {
+/* This is not required -> paddin-top of li */
+/* li:last-child {
     height: calc( var(--li-height) - var(--a-margin-bot));
-}
+} */
 
 li:last-child a {
     margin-bottom: 0;
