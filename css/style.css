@@ -173,13 +173,13 @@ svg path {
     fill: black;
 }
 
-
 main {
     font-size: var(--fs-main);
     grid-row: 2 / span 1;
+    /* height: 100%; */
 }
 
-ul {
+.nav {
     list-style: none;
     margin: 0;
     padding: 0;
@@ -189,13 +189,13 @@ ul {
     justify-content: flex-end;
 }
 
-li {
+.nav-li {
     padding-top: 10px;
     height: var(--li-height);
     transition: height 1000ms ease-in-out;
 }
 
-li section {
+.nav-li section {
     text-align: left;
     overflow: hidden;
     overflow-y: scroll;
@@ -214,7 +214,7 @@ li section {
     height: calc(var(--main-height) - 3*var(--li-height));
 }
 
-.active:last-child a {
+.active:last-child .nav-li-a {
     border-bottom: 1px solid black;
 }
 
@@ -234,6 +234,7 @@ li section {
     
     font-size: 12px;
     font-weight: 400;
+    text-align: right;
 
 }
 
@@ -258,11 +259,11 @@ p {
 
 h1 {
     margin: 10px 0;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 400;
 }
 
-li a {
+.nav-li .nav-li-a {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -280,14 +281,105 @@ li a {
     height: calc( var(--li-height) - var(--a-margin-bot));
 } */
 
-li:last-child a {
+.nav-li:last-child a {
     margin-bottom: 0;
     border-bottom: 0 solid black;
 }
 
-main {
-    grid-row: 2 / span 1;
+.indices {
+    list-style: none;
+    margin: 0;
+    grid-column: 1 / span 1;
+    font-size: 8px;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    /* height: 100%; */
+    justify-content: flex-start;
+}
+
+.project {
+    display: flex;
+    padding-top: 20px;
+    height: unset;
+    transition: none;
+}
+
+.project-ref {
+    display: flex;
+    color: black;
+    text-decoration: none;
+}
+
+.project-index {
+    margin-right: 10px;
+}
+
+.projects {
+    list-style: none;
+    padding: 0;
+    grid-column: 3 / span 3;
+    width: 100%;
+    display: flex;
+    /* overflow: hidden; */
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+}
+
+.project-container {
+    scroll-snap-align: start;
+    min-width: 100%;
     height: 100%;
+    padding-top: 20px;
+    margin-right: 40px;
+}
+
+.project-container:active {
+    color: gray;
+}
+
+.project-title {
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 40px;
+}
+
+.project-content {
+    /* font-weight: 300; */
+    font-size: 16px;
+}
+
+.about {
+    grid-template-rows: repeat(3, 1fr);
+    row-gap: 40px;
+}
+
+.contact-me {
+    margin-top: 40px;
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 1;
+}
+
+.contact-info {
+    margin-top: 40px;
+    grid-column: 3 / span 3;
+    grid-row: 1 / span 1;
+}
+
+.about-me {
+    grid-column: 3 / span 3;
+    grid-row: 2 / span 1;
+}
+
+.credo-title {
+    grid-column: 1 / span 2;
+    grid-row: 3 / span 1;
+}
+
+.credo {
+    grid-column: 3 / span 3;
+    grid-row: 3 / span 1;
 }
 
 footer {
