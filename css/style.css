@@ -89,7 +89,7 @@ body {
     top: 50%;
     left: 50%;
     mix-blend-mode: difference;
-    z-index: 1000;
+    z-index: 1;
     transform: translate(-50%, -50%);
     border-radius: 50%;
     background-color: #f7f8fa;
@@ -99,7 +99,6 @@ body {
     width: 32px;
     height: 32px;
     transform-origin: center;
-    /* transition: top 50ms linear, left 50ms linear; */
 }
 
 #cursor__ball--small {

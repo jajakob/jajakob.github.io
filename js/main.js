@@ -34,51 +34,68 @@ window.addEventListener("load", () => {
     }
 });
 
-// cursor
-const bigBall = document.getElementById('cursor__ball--big');
-const smallBall = document.getElementById('cursor__ball--small');
 const hoverables = document.querySelectorAll('a');
 
-function updateCursorPosition(e) {
-    // let time = Date.now() - start;
-    // start = Date.now();
+class Cursor {
+    constructor(x, y) {
+        this.x = 0;
+        this.y = 0;
+        this.delay = 8;
+        this.end_x = window.innerWidth / 2;
+        this.end_y = window.innerHeight / 2;
+        this.dot = document.getElementById('cursor__ball--small');
+        this.outline = document.getElementById('cursor__ball--big');
+    }
 
-    // let speed = 0.5;
+    init() {
+        this.setupEventListeners();
+        this.animateDotOutline();
+    }
 
-    // let p1 = bigBall.getBoundingClientRect().y + bigBall.getBoundingClientRect().height/2;
-    // let py = p1 + (e.pageY - p1) * speed;
-    
-    // p1 = bigBall.getBoundingClientRect().x + bigBall.getBoundingClientRect().width/2;
-    // let px = p1 + (e.pageX - p1) * speed;
+    setupEventListeners() {
+        let self = this;
+        document.addEventListener('mousemove', function(e) {
+            self.end_x = e.pageX;
+            self.end_y = e.pageY;
+            self.dot.style.top = self.end_y + 'px';
+            self.dot.style.left = self.end_x + 'px';
+        });
 
-    let py = e.pageY;
-    let px = e.pageX;
+        // Anchor hovering
+        hoverables.forEach( item => {
+            item.addEventListener('mouseover', function() {
+                self.outline.style.transform = 'translate(-50%, -50%) scale(2)';
+            });
+            item.addEventListener('mouseout', function() {
+                self.outline.style.transform = 'translate(-50%, -50%) scale(1)';
+            });
+        });
 
-    bigBall.style.top = py + "px";
-    bigBall.style.left = px + "px";
-    smallBall.style.top = e.pageY + "px";
-    smallBall.style.left = e.pageX + "px"; 
+        // Click events
+        document.addEventListener('mousedown', function() {
+            self.outline.style.transform = 'translate(-50%, -50%) scale(2)';
+        });
+        document.addEventListener('mouseup', function() {
+            self.outline.style.transform = 'translate(-50%, -50%) scale(1)';
+        });
+    }
+
+    animateDotOutline() {
+        let self = this;
+        
+        self.x += (self.end_x - self.x) / self.delay;
+        self.y += (self.end_y - self.y) / self.delay;
+        self.outline.style.top = self.y + 'px';
+        self.outline.style.left = self.x + 'px';
+        
+        requestAnimationFrame(this.animateDotOutline.bind(self));
+    }
 }
 
-// Listeners
-window.addEventListener('mousemove', updateCursorPosition);
+const cursor = new Cursor(window.innerWidth / 2, window.innerHeight / 2);
+cursor.init();
 
-// console.log(hoverables);
+// hoverables.forEach( item => {
 
-for (let i = 0; i < hoverables.length; i++) {    
-    hoverables[i].addEventListener('mouseenter', e => {
-        bigBall.style.transform = "translate(-50%, -50%) scale(2)";
-    });
-    hoverables[i].addEventListener('mouseleave', e => {
-        bigBall.style.transform = "translate(-50%, -50%) scale(1)";
-    });
+// });
 
-    hoverables[i].addEventListener('mousedown', e => {
-        bigBall.style.opacity = "0.1";
-    });
-    
-    hoverables[i].addEventListener('mouseup', e => {
-        bigBall.style.opacity = "1";
-    });
-
-}
