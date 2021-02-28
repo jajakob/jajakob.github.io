@@ -44,12 +44,21 @@
     --fs-main: 16px;
     --fs-li: 16px;
     --fs-footer: 10px;
+
+    --line-thickness: 1px;
 }
 
 *, *::before, *::after {
     box-sizing: border-box;
 }
 
+
+html,
+html *,
+body, 
+body * {
+    cursor: none;
+}
 
 body {
     margin: 0;
@@ -67,7 +76,41 @@ body {
     /* grid-template-rows: 3fr 15fr 1fr; */
     grid-template-rows: var(--header-height) var(--main-height) var(--footer-height);
     row-gap: var(--row-gap);
+    background-color: white;
 }
+
+/* .cursor {
+    pointer-events: none;
+} */
+
+.cursor__ball {
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    mix-blend-mode: difference;
+    z-index: 1000;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background-color: #f7f8fa;
+}
+
+#cursor__ball--big {
+    width: 32px;
+    height: 32px;
+    transform-origin: center;
+    /* transition: top 50ms linear, left 50ms linear; */
+}
+
+#cursor__ball--small {
+    width: 8px;
+    height: 8px;
+    
+}
+
+/* .cursor__ball circle {
+    fill: #f7f8fa;
+} */
 
 .preloader {
     position: fixed;
@@ -76,7 +119,7 @@ body {
     width: 100%;
     background-color: white;
     z-index: 2;
-    transition: opacity 1s ease-in-out 1500ms;
+    transition: opacity 500ms ease-in-out 500ms;
 }
 
 .preloader svg {
@@ -85,7 +128,7 @@ body {
 }
 
 .preloader path {
-    animation: logo_preloader 1s;
+    animation: logo_preloader 500ms;
 }
 
 @keyframes logo_preloader {
@@ -121,6 +164,7 @@ header {
     font-size: var(--fs-header);
     display: grid;
     grid-template-rows: 1fr 2fr;
+    background-color: white;
     /* grid-template-columns: 1fr; */
 
     /* width: 100%;
@@ -159,7 +203,7 @@ header {
 .horizontal-line {
     background-color: black;
     width: 100%;
-    height: 1px;
+    height: var(--line-thickness);
 }
 
 #logo {
@@ -177,6 +221,7 @@ main {
     font-size: var(--fs-main);
     grid-row: 2 / span 1;
     /* height: 100%; */
+    background-color: white;
 }
 
 .nav {
@@ -217,11 +262,13 @@ main {
 }
 
 .active:last-child .nav-li-a {
-    border-bottom: 1px solid black;
+    border-bottom: var(--line-thickness) solid black;
 }
 
 .hero {
     grid-column: 3 / span 3;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(auto, 500px));
 }
 
 p {
@@ -243,7 +290,7 @@ h1 {
     text-decoration: none;
     padding-bottom: var(--a-pad-bot);
     margin-bottom: var(--a-margin-bot);
-    border-bottom: 1px solid black;
+    border-bottom: var(--line-thickness) solid black;
     font-size: var(--fs-li);
     transition: border-bottom 1000ms ease-in-out;
 }
@@ -266,7 +313,7 @@ h1 {
     list-style: none;
     margin: 0;
     grid-column: 1 / span 1;
-    font-size: 8px;
+    font-size: 10px;
     display: flex;
     flex-direction: column;
     padding: 0;
@@ -305,14 +352,14 @@ h1 {
 
 .project-authors {
     font-weight: 500;
-    font-size: 8px;
+    font-size: 10px;
     font-style: italic;
 }
 
 .project-journal {
     /* color: gray; */
     font-weight: 400;
-    font-size: 8px;
+    font-size: 10px;
     margin: 0 0 30px 0;
 }
 
@@ -357,6 +404,8 @@ h1 {
 .about-me {
     grid-column: 3 / span 3;
     grid-row: 2 / span 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(auto, 500px));
 }
 
 .credo-title {
@@ -367,6 +416,9 @@ h1 {
 .credo {
     grid-column: 3 / span 3;
     grid-row: 3 / span 1;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(auto, 500px));
 }
 
 footer {
@@ -376,6 +428,7 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    background-color: white;
 }
 
 .copyright {

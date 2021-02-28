@@ -1,3 +1,4 @@
+let start = Date.now();
 const doc_style = getComputedStyle(document.documentElement);
 
 // Get all the list elements
@@ -26,4 +27,64 @@ logo.addEventListener("click", () => {
         li_collection[i].className = "nav-li";
     }
 
-})
+});
+
+// preloader
+window.addEventListener("load", () => {
+    const preloader = document.querySelector(".preloader");
+    if (preloader) {
+        preloader.classList.add("preloader-finish");    
+    }
+});
+
+// cursor
+const bigBall = document.getElementById('cursor__ball--big');
+
+// const smallBall = document.querySelector('.cursor__ball--small');
+const smallBall = document.getElementById('cursor__ball--small');
+const hoverables = document.querySelectorAll('a');
+
+function updateCursorPosition(e) {
+    // let time = Date.now() - start;
+    // start = Date.now();
+
+    // let speed = 0.5;
+
+    // let p1 = bigBall.getBoundingClientRect().y + bigBall.getBoundingClientRect().height/2;
+    // let py = p1 + (e.pageY - p1) * speed;
+    
+    // p1 = bigBall.getBoundingClientRect().x + bigBall.getBoundingClientRect().width/2;
+    // let px = p1 + (e.pageX - p1) * speed;
+
+    let py = e.pageY;
+    let px = e.pageX;
+
+    bigBall.style.top = py + "px";
+    bigBall.style.left = px + "px";
+    smallBall.style.top = e.pageY + "px";
+    smallBall.style.left = e.pageX + "px"; 
+}
+
+// Listeners
+window.addEventListener('mousemove', updateCursorPosition);
+
+// console.log(hoverables);
+console.log(bigBall.style);
+
+for (let i = 0; i < hoverables.length; i++) {    
+    hoverables[i].addEventListener('mouseenter', e => {
+        bigBall.style.transform = "translate(-50%, -50%) scale(2)";
+    });
+    hoverables[i].addEventListener('mouseleave', e => {
+        bigBall.style.transform = "translate(-50%, -50%) scale(1)";
+    });
+
+    hoverables[i].addEventListener('mousedown', e => {
+        bigBall.style.opacity = "0.1";
+    });
+    
+    hoverables[i].addEventListener('mouseup', e => {
+        bigBall.style.opacity = "1";
+    });
+
+}
