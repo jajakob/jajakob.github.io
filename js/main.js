@@ -1,12 +1,9 @@
-let start = Date.now();
 const doc_style = getComputedStyle(document.documentElement);
 
 // Get all the list elements
 let li_collection = document.getElementsByClassName("nav-li");
 const home = li_collection[1].getElementsByClassName("nav-li-a")[0];
 
-console.log(li_collection[0]);
-console.log(getComputedStyle(home).height);
 // document.documentElement.style.setProperty('--li-height', getComputedStyle(home).height);
 
 
@@ -39,8 +36,6 @@ window.addEventListener("load", () => {
 
 // cursor
 const bigBall = document.getElementById('cursor__ball--big');
-
-// const smallBall = document.querySelector('.cursor__ball--small');
 const smallBall = document.getElementById('cursor__ball--small');
 const hoverables = document.querySelectorAll('a');
 
@@ -69,7 +64,6 @@ function updateCursorPosition(e) {
 window.addEventListener('mousemove', updateCursorPosition);
 
 // console.log(hoverables);
-console.log(bigBall.style);
 
 for (let i = 0; i < hoverables.length; i++) {    
     hoverables[i].addEventListener('mouseenter', e => {
