@@ -78,6 +78,7 @@ body {
     grid-template-rows: var(--header-height) var(--main-height) var(--footer-height);
     row-gap: var(--row-gap);
     background-color: white;
+    overflow: hidden;
 }
 
 /* .cursor {
@@ -129,7 +130,7 @@ body {
 }
 
 .preloader path {
-    animation: logo_preloader 500ms;
+    animation: logo_preloader 1000ms;
 }
 
 @keyframes logo_preloader {
@@ -435,7 +436,7 @@ footer {
 @media only screen and (max-width: 600px) {
     :root {
 
-        --header-height: 100px;
+        --header-height: 80px;
         --footer-height: 20px;
         --main-height: calc(var(--body-height) - 2*var(--body-pad) - var(--header-height) - var(--footer-height));
 
