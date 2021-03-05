@@ -26,7 +26,7 @@
     --tertiary-color: #236159;
     --logo-size: 60px;
 
-    --body-pad: 60px;
+    --body-pad: 10px;
     --body-height: 100vh;
 
     --header-height: 125px;
@@ -59,7 +59,7 @@ body * {
 
 body {
     margin: 0;
-    padding: var(--body-pad) 10px;
+    padding: 20px 10px var(--body-pad) 10px;
     /* min-height: 100vh; */
     height: var(--body-height);
     /* height: 100vh; */
@@ -428,10 +428,10 @@ footer {
 
 @media only screen and (max-width: 600px) {
     :root {
-
+        --body-pad: 60px;
         --header-height: 70px;
         --footer-height: 20px;
-        --main-height: calc(var(--body-height) - 2*var(--body-pad) - var(--header-height) - var(--footer-height));
+        --main-height: calc(var(--body-height) - var(--body-pad) - 10px - var(--header-height) - var(--footer-height));
 
         --logo-size: 40px;
         
@@ -453,7 +453,7 @@ footer {
 
 @media screen and (max-width: 700px) and (orientation: landscape) {
     :root {
-
+        --body-pad: 60px;
         --header-height: 80px;
         --footer-height: 20px;
         --main-height: calc(var(--body-height) - 2*var(--body-pad) - var(--header-height) - var(--footer-height));
