@@ -26,7 +26,7 @@ logo.addEventListener("click", () => {
 
 });
 
-// preloader
+preloader
 window.addEventListener("load", () => {
     const preloader = document.querySelector(".preloader");
     if (preloader) {
