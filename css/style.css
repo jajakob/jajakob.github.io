@@ -44,6 +44,7 @@
     --fs-main: 16px;
     --fs-li: 16px;
     --fs-footer: 10px;
+    --fs-title: 20px;
 
     --line-thickness: 1px;
 }
@@ -277,12 +278,6 @@ p {
     /* font-weight: 400; */
 }
 
-h1 {
-    margin: 10px 0;
-    font-size: 20px;
-    font-weight: 400;
-}
-
 .nav-li .nav-li-a {
     width: 100%;
     display: flex;
@@ -314,7 +309,7 @@ h1 {
     list-style: none;
     margin: 0;
     grid-column: 1 / span 1;
-    font-size: 10px;
+    font-size: var(--fs-footer);
     display: flex;
     flex-direction: column;
     padding: 0;
@@ -353,14 +348,14 @@ h1 {
 
 .project-authors {
     font-weight: 500;
-    font-size: 10px;
+    font-size: var(--fs-header);
     font-style: italic;
 }
 
 .project-journal {
     /* color: gray; */
     font-weight: 400;
-    font-size: 10px;
+    font-size: var(--fs-header);
     margin: 0 0 30px 0;
 }
 
@@ -373,14 +368,14 @@ h1 {
 }
 
 .project-title {
-    font-size: 20px;
+    font-size: var(--fs-title);
     font-weight: 400;
     margin-bottom: 40px;
 }
 
 .project-content {
     /* font-weight: 300; */
-    font-size: 16px;
+    font-size: var(--fs-main);
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(auto, 500px));
 }
@@ -434,4 +429,25 @@ footer {
 
 .copyright {
     align-self: flex-start;
+}
+
+@media only screen and (max-width: 400px) {
+  :root {
+    --header-height: 100px;
+    --footer-height: 20px;
+    --main-height: calc(var(--body-height) - 2*var(--body-pad) - var(--header-height) - var(--footer-height));
+
+    /* --row-gap: var(--row-gap); */
+    
+    --a-pad-bot: 5px;
+    --a-margin-bot: 5px;
+    --li-height: calc(19px + var(--a-pad-bot) + var(--a-margin-bot));
+    
+    
+    --fs-header: 10px;
+    --fs-main: 12px;
+    --fs-li: 10px;
+    --fs-footer: 8px;
+    --fs-title: 16px;
+}
 }
