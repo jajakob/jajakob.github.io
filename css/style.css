@@ -76,7 +76,7 @@ body {
     grid-template-rows: var(--header-height) var(--main-height) var(--footer-height);
     row-gap: var(--row-gap);
     background-color: white;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 /* .cursor {
@@ -155,7 +155,6 @@ body {
 
 header {    
     /* background-color: black; */
-    position: sticky;
     grid-column: 1 / -1;
     grid-row: 1 / span 1;
     row-gap: var(--row-gap);
@@ -234,7 +233,6 @@ main {
 }
 
 .nav-li {
-    position: sticky;
     /* padding-top: var(--a-pad); */
     height: var(--li-height);
     transition: height 1000ms ease-in-out;
@@ -420,6 +418,7 @@ p {
 footer {
     /* background-color: black; */
     position: sticky;
+    bottom: 0;
     grid-row: 3 / span 1;
     font-size: var(--fs-footer);
     display: flex;
