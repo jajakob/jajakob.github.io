@@ -76,7 +76,7 @@ body {
     grid-template-rows: var(--header-height) var(--main-height) var(--footer-height);
     row-gap: var(--row-gap);
     background-color: white;
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 
 /* .cursor {
@@ -153,8 +153,7 @@ body {
     pointer-events: none;
 }
 
-header {
-    
+header {    
     /* background-color: black; */
     position: sticky;
     grid-column: 1 / -1;
@@ -437,7 +436,7 @@ footer {
 @media only screen and (max-width: 600px) {
     :root {
 
-        --header-height: 80px;
+        --header-height: 70px;
         --footer-height: 20px;
         --main-height: calc(var(--body-height) - 2*var(--body-pad) - var(--header-height) - var(--footer-height));
 
