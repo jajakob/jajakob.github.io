@@ -26,7 +26,7 @@
     --tertiary-color: #236159;
     --logo-size: 60px;
 
-    --body-pad: 10px;
+    --body-pad: 60px;
     --body-height: 100vh;
 
     --header-height: 125px;
@@ -377,7 +377,6 @@ p {
 .nav-li .about {
     grid-template-rows: repeat(3, 1fr);
     row-gap: 40px;
-    /* overflow-y: scroll; */
 }
 
 .contact-me {
@@ -409,7 +408,6 @@ p {
     grid-row: 3 / span 1;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(auto, 500px));
-    /* padding-bottom: calc(2*var(--a-pad)); */
 }
 
 footer {
@@ -422,7 +420,6 @@ footer {
     background-color: white;
     /* border-top: var(--line-thickness) solid black; */
     padding-top: var(--a-pad);
-    /* z-index: 1; */
 }
 
 .copyright {
