@@ -158,7 +158,7 @@ body {
 header {
     
     /* background-color: black; */
-    
+    position: sticky;
     grid-column: 1 / -1;
     grid-row: 1 / span 1;
     row-gap: var(--row-gap);
@@ -237,7 +237,8 @@ main {
 }
 
 .nav-li {
-    padding-top: 10px;
+    position: sticky;
+    padding-top: var(--a-pad-bot);
     height: var(--li-height);
     transition: height 1000ms ease-in-out;
 }
@@ -446,7 +447,7 @@ footer {
         
         --a-pad-bot: 5px;
         --a-margin-bot: 5px;
-        --li-height: calc(19px + var(--a-pad-bot) + var(--a-margin-bot));
+        --li-height: calc(13px + var(--a-pad-bot) + var(--a-margin-bot));
         
         
         --fs-header: 10px;
@@ -474,7 +475,7 @@ footer {
         
         --a-pad-bot: 2px;
         --a-margin-bot: 2px;
-        --li-height: calc(19px + var(--a-pad-bot) + var(--a-margin-bot));
+        --li-height: calc(13px + var(--a-pad-bot) + var(--a-margin-bot));
         
         
         --fs-header: 10px;
