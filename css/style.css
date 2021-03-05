@@ -35,10 +35,8 @@
 
     /* --row-gap: var(--row-gap); */
     
-    --a-pad-bot: 10px;
-    --a-margin-bot: 10px;
-    --li-height: calc(19px + var(--a-pad-bot) + var(--a-margin-bot));
-    
+    --a-pad: 10px;
+    --li-height: calc(19px + 2*var(--a-pad));
     
     --fs-header: 12px;
     --fs-main: 16px;
@@ -238,7 +236,7 @@ main {
 
 .nav-li {
     position: sticky;
-    padding-top: var(--a-pad-bot);
+    /* padding-top: var(--a-pad); */
     height: var(--li-height);
     transition: height 1000ms ease-in-out;
 }
@@ -287,8 +285,7 @@ p {
     justify-content: space-between;
     color: black;
     text-decoration: none;
-    padding-bottom: var(--a-pad-bot);
-    margin-bottom: var(--a-margin-bot);
+    padding: var(--a-pad) 0;
     border-bottom: var(--line-thickness) solid black;
     font-size: var(--fs-li);
     transition: border-bottom 1000ms ease-in-out;
@@ -446,9 +443,8 @@ footer {
 
         --logo-size: 40px;
         
-        --a-pad-bot: 4px;
-        --a-margin-bot: 4px;
-        --li-height: calc(12px + var(--a-pad-bot) + var(--a-margin-bot));
+        --a-pad: 4px;
+        --li-height: calc(12px + 2*var(--a-pad));
         
         
         --fs-header: 10px;
@@ -474,9 +470,8 @@ footer {
 
         --logo-size: 40px;
         
-        --a-pad-bot: 4px;
-        --a-margin-bot: 4px;
-        --li-height: calc(12px + var(--a-pad-bot) + var(--a-margin-bot));
+        --a-pad: 4px;
+        --li-height: calc(12px + 2*var(--a-pad));
         
         
         --fs-header: 10px;
