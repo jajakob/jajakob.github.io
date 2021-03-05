@@ -417,8 +417,6 @@ p {
 
 footer {
     /* background-color: black; */
-    position: sticky;
-    bottom: 0;
     grid-row: 3 / span 1;
     font-size: var(--fs-footer);
     display: flex;
@@ -456,6 +454,36 @@ footer {
 
     .cursor__ball {
         visibility: hidden;
+    }
+
+    header {
+        position: sticky;
+        top: var(--body-pad);
+    }
+
+    .nav-li:first-child {
+        position: sticky;
+        top: 80px;
+    }
+
+    .nav-li:first-child {
+        position: sticky;
+        top: 80px;
+    }
+
+    .nav-li:nth-child(2) {
+        position: sticky;
+        top: 96px;
+    }
+
+    .nav-li:last-child {
+        position: sticky;
+        bottom: 30px;
+    }
+
+    footer {
+        position: sticky;
+        bottom: var(--body-pad);
     }
 }
 
