@@ -433,25 +433,57 @@ footer {
 }
 
 @media only screen and (max-width: 600px) {
-  :root {
+    :root {
 
-    --header-height: 100px;
-    --footer-height: 20px;
-    --main-height: calc(var(--body-height) - 2*var(--body-pad) - var(--header-height) - var(--footer-height));
+        --header-height: 100px;
+        --footer-height: 20px;
+        --main-height: calc(var(--body-height) - 2*var(--body-pad) - var(--header-height) - var(--footer-height));
 
-    /* --row-gap: var(--row-gap); */
+        /* --row-gap: var(--row-gap); */
 
-    --logo-size: 40px;
-    
-    --a-pad-bot: 5px;
-    --a-margin-bot: 5px;
-    --li-height: calc(19px + var(--a-pad-bot) + var(--a-margin-bot));
-    
-    
-    --fs-header: 10px;
-    --fs-main: 12px;
-    --fs-li: 10px;
-    --fs-footer: 8px;
-    --fs-title: 16px;
+        --logo-size: 40px;
+        
+        --a-pad-bot: 5px;
+        --a-margin-bot: 5px;
+        --li-height: calc(19px + var(--a-pad-bot) + var(--a-margin-bot));
+        
+        
+        --fs-header: 10px;
+        --fs-main: 12px;
+        --fs-li: 10px;
+        --fs-footer: 8px;
+        --fs-title: 16px;
+    }
+
+    .cursor__ball {
+        visibility: hidden;
+    }
 }
+
+@media screen and (max-width: 700px) and (orientation: landscape) {
+    :root {
+
+        --header-height: 80px;
+        --footer-height: 20px;
+        --main-height: calc(var(--body-height) - 2*var(--body-pad) - var(--header-height) - var(--footer-height));
+
+        /* --row-gap: var(--row-gap); */
+
+        --logo-size: 40px;
+        
+        --a-pad-bot: 2px;
+        --a-margin-bot: 2px;
+        --li-height: calc(19px + var(--a-pad-bot) + var(--a-margin-bot));
+        
+        
+        --fs-header: 10px;
+        --fs-main: 12px;
+        --fs-li: 10px;
+        --fs-footer: 8px;
+        --fs-title: 16px;
+    }
+
+    .cursor__ball {
+        visibility: hidden;
+    }
 }
