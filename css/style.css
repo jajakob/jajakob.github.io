@@ -349,14 +349,14 @@ p {
 
 .project-authors {
     font-weight: 500;
-    font-size: var(--fs-header);
+    font-size: var(--fs-footer);
     font-style: italic;
 }
 
 .project-journal {
     /* color: gray; */
     font-weight: 400;
-    font-size: var(--fs-header);
+    font-size: var(--fs-footer);
     margin: 0 0 30px 0;
 }
 
@@ -432,13 +432,16 @@ footer {
     align-self: flex-start;
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 600px) {
   :root {
+
     --header-height: 100px;
     --footer-height: 20px;
     --main-height: calc(var(--body-height) - 2*var(--body-pad) - var(--header-height) - var(--footer-height));
 
     /* --row-gap: var(--row-gap); */
+
+    --logo-size: 40px;
     
     --a-pad-bot: 5px;
     --a-margin-bot: 5px;
