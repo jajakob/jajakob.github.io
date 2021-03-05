@@ -78,7 +78,7 @@ body {
     grid-template-rows: var(--header-height) var(--main-height) var(--footer-height);
     row-gap: var(--row-gap);
     background-color: white;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 /* .cursor {
@@ -288,7 +288,7 @@ p {
     color: black;
     text-decoration: none;
     padding-bottom: var(--a-pad-bot);
-    /* margin-bottom: var(--a-margin-bot); */
+    margin-bottom: var(--a-margin-bot);
     border-bottom: var(--line-thickness) solid black;
     font-size: var(--fs-li);
     transition: border-bottom 1000ms ease-in-out;
@@ -446,9 +446,9 @@ footer {
 
         --logo-size: 40px;
         
-        --a-pad-bot: 5px;
-        --a-margin-bot: 5px;
-        --li-height: calc(13px + var(--a-pad-bot) + var(--a-margin-bot));
+        --a-pad-bot: 4px;
+        --a-margin-bot: 4px;
+        --li-height: calc(12px + var(--a-pad-bot) + var(--a-margin-bot));
         
         
         --fs-header: 10px;
@@ -474,9 +474,9 @@ footer {
 
         --logo-size: 40px;
         
-        --a-pad-bot: 2px;
-        --a-margin-bot: 2px;
-        --li-height: calc(13px + var(--a-pad-bot) + var(--a-margin-bot));
+        --a-pad-bot: 4px;
+        --a-margin-bot: 4px;
+        --li-height: calc(12px + var(--a-pad-bot) + var(--a-margin-bot));
         
         
         --fs-header: 10px;
