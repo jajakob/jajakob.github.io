@@ -28,6 +28,7 @@
 
     --body-pad: 10px;
     --body-height: 100vh;
+    --body-height: calc(var(--vh, 1vh) * 100);
 
     --header-height: 125px;
     --footer-height: 41px;
@@ -59,9 +60,11 @@ body * {
 
 body {
     margin: 0;
-    padding: 20px 10px var(--body-pad) 10px;
+    /* padding: 20px 10px var(--body-pad) 10px; */
+    padding: var(--body-pad);
     /* min-height: 100vh; */
-    height: var(--body-height);
+    /* height: var(--body-height); */
+    min-height: var(--body-height);
     /* height: 100vh; */
     /* background-color: sienna; */
     /* background-color: var(--background-color); */
@@ -377,6 +380,7 @@ p {
 .nav-li .about {
     grid-template-rows: repeat(3, 1fr);
     row-gap: 40px;
+    height: calc(100% - var(--li-height) - 2*var(--a-pad));
 }
 
 .contact-me {
@@ -419,7 +423,7 @@ footer {
     justify-content: space-between;
     background-color: white;
     /* border-top: var(--line-thickness) solid black; */
-    padding-top: var(--a-pad);
+    /* padding-top: var(--a-pad); */
 }
 
 .copyright {
@@ -428,7 +432,7 @@ footer {
 
 @media only screen and (max-width: 600px) {
     :root {
-        --body-pad: 60px;
+        --body-pad: 10px;
         --header-height: 70px;
         --footer-height: 20px;
         --main-height: calc(var(--body-height) - var(--body-pad) - 10px - var(--header-height) - var(--footer-height));
@@ -453,7 +457,7 @@ footer {
 
 @media screen and (max-width: 700px) and (orientation: landscape) {
     :root {
-        --body-pad: 60px;
+        --body-pad: 10px;
         --header-height: 80px;
         --footer-height: 20px;
         --main-height: calc(var(--body-height) - 2*var(--body-pad) - var(--header-height) - var(--footer-height));

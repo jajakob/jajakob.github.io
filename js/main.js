@@ -1,4 +1,4 @@
-const doc_style = getComputedStyle(document.documentElement);
+// const doc_style = getComputedStyle(document.documentElement);
 
 // Get all the list elements
 let li_collection = document.getElementsByClassName("nav-li");
@@ -33,6 +33,15 @@ window.addEventListener("load", () => {
         preloader.classList.add("preloader-finish");    
     }
 });
+
+
+let vh = window.innerHeight * 0.01;
+document.documentElement.style.setProperty('--vh', `${vh}px`);
+window.addEventListener('resize', () => {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+});
+
 
 const hoverables = document.querySelectorAll('a');
 
