@@ -63,8 +63,7 @@ body {
     /* padding: 20px 10px var(--body-pad) 10px; */
     padding: var(--body-pad);
     /* min-height: 100vh; */
-    /* height: var(--body-height); */
-    min-height: var(--body-height);
+    height: var(--body-height);
     /* height: 100vh; */
     /* background-color: sienna; */
     /* background-color: var(--background-color); */
@@ -455,7 +454,7 @@ footer {
     }
 }
 
-@media screen and (max-width: 700px) and (orientation: landscape) {
+@media screen and (max-width: 850px) and (orientation: landscape) {
     :root {
         --body-pad: 10px;
         --header-height: 80px;
