@@ -268,6 +268,15 @@ main {
     grid-column: 3 / span 1;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(auto, 500px));
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.hero-content {
+    align-self: end;
+    font-size: 24px;
+    grid-row: 1 / span 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(auto, 500px));
 }
 
 p {
