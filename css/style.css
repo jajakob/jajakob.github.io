@@ -24,8 +24,11 @@
     --secondary-color: #616263; /* #737379 */
     --background-color: white;
     --tertiary-color: #236159;
-    --logo-size: 60px;
-    --logo-shift: calc(var(--logo-size) * 2/9);
+    /* --logo-size: 60px; */
+    --logo-size: 100px;
+    /* --logo-shift: calc(var(--logo-size) * 2/9); */
+    --logo-shift: calc(var(--logo-size) * 0.1);
+    
 
     --body-pad: 10px;
     --body-height: 100vh;
@@ -445,7 +448,8 @@ footer {
         --footer-height: 20px;
         --main-height: calc(var(--body-height) - var(--body-pad) - 10px - var(--header-height) - var(--footer-height));
 
-        --logo-size: 40px;
+        /* --logo-size: 40px; */
+        --logo-size: 60px;
         
         --a-pad: 4px;
         --li-height: calc(12px + var(--a-pad));
@@ -469,7 +473,8 @@ footer {
         --footer-height: 20px;
         --main-height: calc(var(--body-height) - 2*var(--body-pad) - var(--header-height) - var(--footer-height));
 
-        --logo-size: 40px;
+        /* --logo-size: 40px; */
+        --logo-size: 60px;
         
         --a-pad: 4px;
         --li-height: calc(12px + var(--a-pad));
